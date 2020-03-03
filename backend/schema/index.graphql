@@ -1,0 +1,77 @@
+type PrintImage {
+    height: Int,
+    iiifbaseuri: String,
+    baseimageurl: String,
+    width: Int,
+    idsid: Int,
+    displayorder: Int,
+    format: String,
+    copyright: String,
+    imageid: ID,
+    renditionnumber: String
+}
+
+type Print {
+      accessionyear: Int,
+      technique: String,
+      mediacount: Int,
+      totalpageviews: Int,
+      groupcount: Int,
+      objectnumber: String,
+      colorcount: Int,
+      lastupdate: String,
+      rank: Int,
+      imagecount: Int,
+      description: String,
+      dateoflastpageview: String,
+      dateoffirstpageview: String,
+      primaryimageurl: String,
+      colors: [String],
+      dated: String,
+      contextualtextcount: Int,
+      copyright: String,
+      accessionmethod: String,
+      url: String,
+      provenance: String,
+      images: [PrintImage],
+      publicationcount: Int,
+      objectid: Int,
+      culture: String,
+      verificationleveldescription: String,
+      standardreferencenumber: String,
+      department: String,
+      markscount: Int,
+      contact: String,
+      titlescount: Int,
+      id: ID,
+      title: String,
+      verificationlevel: Int,
+      division: String,
+      commentary: String,
+      relatedcount: Int,
+      datebegin: Int,
+      labeltext: String,
+      totaluniquepageviews: Int,
+      dimensions: String,
+      exhibitioncount: Int,
+      techniqueid: Int,
+      dateend: Int,
+      creditline: String,
+      imagepermissionlevel: Int,
+      signed: String,
+      century: String,
+      classificationid: Int,
+      peoplecount: Int,
+      accesslevel: Int,
+      classification: String
+}
+
+type PrintInfo {
+    totalPrints: Int
+    pages: Int
+    Prints: [Print]
+}
+
+type Query {
+    getPrints(page: Int, itemsPerPage: Int): PrintInfo
+}
